@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>DLUP</title>
+    <style>
+        .body {
+    margin: 2;
+    padding: 2;
+    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.58;
+    color: #333;
+    background-color: #f4f4f4;
+    }
+        .a {
+      background-color: gray;
+      color: white;
+      padding: 1em 1.5em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+        a:hover {
+      background-color: #555;
+    }
+
+        a:active {
+      background-color: black;
+    }
+
+        a:visited {
+      background-color: #ccc;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#locales").change(function () {
+                var selectedOption = $('#locales').val();
+                if (selectedOption !== ''){
+                    window.location.replace('?lang=' + selectedOption);
+                }
+            });
+        });
+    </script>
 </head>
 <body bgcolor="#00BFFF">
-<a href="./login.html">Log in</a>
+<p th:text="${messages}"></p>
+<div class="body">
+    <div class="a">
+        <a class="a" href="./login.html" th:text="#{main.login}">Log in</a>
+        <a class="a" href="./contact.html">Contacts</a>
+    </div>
+    <span th:text="#{lang.change}"></span>:
+    <select id="locales">
+        <option value=""></option>
+        <option value="en" th:text="#{lang.en}">En</option>
+        <option value="ee" th:text="#{lang.ee}">Ee</option>
+</div>
 </body>
 </html>

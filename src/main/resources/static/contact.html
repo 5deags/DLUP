@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <style>
+ #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+ .body {
+    margin: 5;
+    padding: 5;
+    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 2.58;
+    color: #f4f4f4;
+    background-color: gray;
+    }
+</style>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+</head>
+<body bgcolor="#00BFFF">
+    <h3 class="body" align="CENTER" th:text="#{contact.location}"></h3>
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  var liivi = {lat: 58.378244499999994, lng: 26.714403012216383};
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 18, center: liivi});
+  var marker = new google.maps.Marker({position: liivi, map: map});
+}
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPJDqh9pwuojjBSOzO_EtDZLDZTCqxpPM&callback=initMap">
+    </script>
+
+</body>
+</html>
