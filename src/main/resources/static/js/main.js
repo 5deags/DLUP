@@ -87,7 +87,16 @@ multipleUploadForm.addEventListener('submit', function(event){
 
 // dropdown menu function
 function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    //document.getElementById("myDropdown").classList.toggle("show");
+    var dropdwn = document.getElementById("myDropdown");
+    for(var i = 0; i < options.length; i++) {
+        var opt = options[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select.appendChild(el);
+    }
+    dropdwn.classList.toggle("show");
 }
 
 // Close the dropdown menu if the user clicks outside of it

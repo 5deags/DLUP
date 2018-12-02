@@ -36,6 +36,13 @@ function initMap() {
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPJDqh9pwuojjBSOzO_EtDZLDZTCqxpPM&callback=initMap">
     </script>
-
+    <div id="test">
+        <script src="{% static 'js/ip.js' %}"></script>
+        <script>
+        $.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
+        console.log(JSON.stringify(data, null, 2));
+        });
+        </script>
+    </div>
 </body>
 </html>
