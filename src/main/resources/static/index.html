@@ -33,8 +33,11 @@
       background-color: #ccc;
     }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
+
+</head>
+<body bgcolor="#00BFFF">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
         $(document).ready(function() {
             $("#locales").change(function () {
                 var selectedOption = $('#locales').val();
@@ -44,8 +47,6 @@
             });
         });
     </script>
-</head>
-<body bgcolor="#00BFFF">
 <p th:text="${messages}"></p>
 <div class="body">
     <div class="a">
